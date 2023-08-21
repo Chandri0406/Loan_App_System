@@ -14,5 +14,7 @@ namespace Loan_App
     }
     internal class CreateLoans
     {
+        List <BussinessLoan> Bloan = new List <BussinessLoan>();
+        List <PersonalLoan> Ploan = new List <PersonalLoan>();
     }
 }
