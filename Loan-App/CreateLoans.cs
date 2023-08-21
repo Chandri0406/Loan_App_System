@@ -14,7 +14,19 @@ namespace Loan_App
     }
     internal class CreateLoans
     {
-        List <BussinessLoan> Bloan = new List <BussinessLoan>();
-        List <PersonalLoan> Ploan = new List <PersonalLoan>();
+        string custFirstname, custLastname;
+        int loanNumber, term;
+        double loanAmount;
+        bool Continue = true;
+        List<BussinessLoan> Bloan = new List<BussinessLoan>();
+        List<PersonalLoan> Ploan = new List<PersonalLoan>();
+        
+
+        while(Continue)
+        {
+            Console.WriteLine("1. Add Business Loan");
+            Console.WriteLine("2. Add Personal Loan");
+            Console.WriteLine("3. Exit");
+        }
     }
 }
