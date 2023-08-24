@@ -8,9 +8,9 @@ namespace Loan_App
 {
     public abstract class Loan
     {
-        string custFirstname, custLastname;
-        int loanNumber, term;
-        double loanAmount;
+        private string custFirstname, custLastname;
+        private int loanNumber, term;
+        private double loanAmount, interestRate;
 
         public Loan()
         {

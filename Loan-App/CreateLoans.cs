@@ -8,5 +8,6 @@ namespace Loan_App
 {
     internal class CreateLoans
     {
+
     }
 }
