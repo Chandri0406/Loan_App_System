@@ -8,16 +8,16 @@ namespace Loan_App
 {
     public abstract class Loan
     {
-        private string custFirstname, custLastname;
-        private int loanNumber, term;
+        private string custFirstname, custLastname, term;
+        private int loanNumber;
         private double loanAmount, interestRate;
 
         public Loan()
         {
-            term = 1;
+            
         }
 
-        protected Loan(string custFirstname, string custLastname, int loanNumber, int term, double loanAmount)
+        protected Loan(string custFirstname, string custLastname, int loanNumber, string term, double loanAmount)
         {
             this.CustFirstname = custFirstname;
             this.CustLastname = custLastname;
@@ -29,7 +29,7 @@ namespace Loan_App
         public string CustFirstname { get => custFirstname; set => custFirstname = value; }
         public string CustLastname { get => custLastname; set => custLastname = value; }
         public int LoanNumber { get => loanNumber; set => loanNumber = value; }
-        public int Term { get => term; set => term = value; }
+        public string Term { get => term; set => term = value; }
         public double LoanAmount { get => loanAmount; set => loanAmount = value; }
 
         public override string ToString()

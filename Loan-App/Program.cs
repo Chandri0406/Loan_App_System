@@ -15,8 +15,8 @@ namespace Loan_App
             //that loan. Store the created Loan objects in the array.When data entry is complete, display all the
             //loans.
             
-            string custFirstname, custLastname;
-            int loanNumber, term;
+            string custFirstname, custLastname, term;
+            int loanNumber;
             double loanAmount, primeInterestRate;
             Loan[] loans = new Loan[5];
 
@@ -45,7 +45,7 @@ namespace Loan_App
                     loanAmount = double.Parse(Console.ReadLine());
 
                     Console.WriteLine("Term:");
-                    term = int.Parse(Console.ReadLine());
+                    term = Console.ReadLine();
                 }
                 else // Personal Loan
                 {
@@ -62,7 +62,7 @@ namespace Loan_App
                     loanAmount = double.Parse(Console.ReadLine());
 
                     Console.WriteLine("Term:");
-                    term = int.Parse(Console.ReadLine());
+                    term = Console.ReadLine();
                 }
             }
                 

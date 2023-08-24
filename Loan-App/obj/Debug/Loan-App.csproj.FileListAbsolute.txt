@@ -1,0 +1,5 @@
+C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan-App.csproj.AssemblyReference.cache
+C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan-App.csproj.SuggestedBindingRedirects.cache
+C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan_App.Forms.resources
+C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan-App.csproj.GenerateResource.cache
+C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan-App.csproj.CoreCompileInputs.cache
