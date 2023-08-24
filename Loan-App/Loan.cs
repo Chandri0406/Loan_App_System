@@ -10,7 +10,7 @@ namespace Loan_App
     {
         private string custFirstname, custLastname;
         private int loanNumber, term;
-        private double loanAmount;
+        private double loanAmount, interestRate;
 
         public Loan()
         {

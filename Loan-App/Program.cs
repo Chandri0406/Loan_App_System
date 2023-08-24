@@ -8,13 +8,6 @@ namespace Loan_App
 {
     internal class Program
     {
-        enum Menu
-        {
-            AddBL = 1,
-            AddPl,
-            Exit
-        }
-
         static void Main(string[] args)
         {
             //An application that creates an array of five Loans. Prompt the user for the current 
@@ -24,41 +17,59 @@ namespace Loan_App
             
             string custFirstname, custLastname;
             int loanNumber, term;
-            double loanAmount;
-            bool Continue = true;
-            List<BussinessLoan> Bloan = new List<BussinessLoan>();
-            List<PersonalLoan> Ploan = new List<PersonalLoan>();
+            double loanAmount, primeInterestRate;
+            Loan[] loans = new Loan[5];
 
+            //A prompt for the prime interest rate
+            Console.WriteLine("Enter the prime interest rate");
+            primeInterestRate = double.Parse(Console.ReadLine());
 
-            while (Continue)
+            //A loop for 5 loans
+            for (int i=0; i<5; i++)
             {
-                Console.WriteLine("1. Add Business Loan");
-                Console.WriteLine("2. Add Personal Loan");
-                Console.WriteLine("3. Exit");
+                Console.WriteLine("Type of loan: \n 1. Business Loan \n 2. Personal Loan");
                 int choice = int.Parse(Console.ReadLine());
 
-                switch ((Menu)choice)
+                if (choice == 1) // Business Loan
                 {
-                    case Menu.AddBL:
-                        Console.WriteLine("Customer Name:");
-                        custFirstname = Console.ReadLine();
+                    Console.WriteLine("Loan Number:");
+                    loanNumber = int.Parse(Console.ReadLine());
 
-                        Console.WriteLine("Customer Surname:");
-                        custLastname = Console.ReadLine();
+                    Console.WriteLine("Customer Name:");
+                    custFirstname = Console.ReadLine();
 
-                        Console.WriteLine("");
+                    Console.WriteLine("Customer Surname:");
+                    custLastname = Console.ReadLine();
 
-                        break;
+                    Console.WriteLine("Loan Amount:");
+                    loanAmount = double.Parse(Console.ReadLine());
 
-                    case Menu.AddPl:
-                        break;
-
-                    case Menu.Exit:
-                        break;
-
-                    default:
-                        break;
+                    Console.WriteLine("Term:");
+                    term = int.Parse(Console.ReadLine());
                 }
+                else // Personal Loan
+                {
+                    Console.WriteLine("Loan Number:");
+                    loanNumber = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Customer Name:");
+                    custFirstname = Console.ReadLine();
+
+                    Console.WriteLine("Customer Surname:");
+                    custLastname = Console.ReadLine();
+
+                    Console.WriteLine("Loan Amount:");
+                    loanAmount = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Term:");
+                    term = int.Parse(Console.ReadLine());
+                }
+            }
+                
+                
+
+                
+                
             }
         }
     }
