@@ -6,34 +6,34 @@ using System.Threading.Tasks;
 
 namespace Loan_App
 {
-    public abstract class Loan
+    abstract class Loan
     {
-        private string custFirstname, custLastname;
-        private int loanNumber, term;
-        private double loanAmount, interestRate;
+        private string custFirstname, custLastname, term;
+        private int loanNumber;
+        private double loanAmount, primeInterestRate;
 
         public Loan()
         {
-            term = 1;
+            
         }
 
-        protected Loan(string custFirstname, string custLastname, int loanNumber, int term, double loanAmount, double interestRate)
+        public Loan(string custFirstname, string custLastname, string term, int loanNumber, double loanAmount, double primeInterestRate)
         {
             this.CustFirstname = custFirstname;
             this.CustLastname = custLastname;
             this.LoanNumber = loanNumber;
             this.Term = term;
             this.LoanAmount = loanAmount;
-            this.InterestRate = interestRate;
+            this.InterestRate = primeInterestRate;
         }
 
         // need an event for when loan greater than 100 000
         public string CustFirstname { get => custFirstname; set => custFirstname = value; }
         public string CustLastname { get => custLastname; set => custLastname = value; }
+        public string Term { get => term; set => term = value; }
         public int LoanNumber { get => loanNumber; set => loanNumber = value; }
-        public int Term { get => term; set => term = value; }
         public double LoanAmount { get => loanAmount; set => loanAmount = value; }
-        public double InterestRate { get => interestRate; set => interestRate = value; }
+        public double InterestRate { get => primeInterestRate; set => primeInterestRate = value; }
 
         public override string ToString()
         {
