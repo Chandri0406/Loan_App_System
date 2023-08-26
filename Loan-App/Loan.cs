@@ -17,20 +17,23 @@ namespace Loan_App
             term = 1;
         }
 
-        protected Loan(string custFirstname, string custLastname, int loanNumber, int term, double loanAmount)
+        protected Loan(string custFirstname, string custLastname, int loanNumber, int term, double loanAmount, double interestRate)
         {
             this.CustFirstname = custFirstname;
             this.CustLastname = custLastname;
             this.LoanNumber = loanNumber;
             this.Term = term;
             this.LoanAmount = loanAmount;
+            this.InterestRate = interestRate;
         }
 
+        // need an event for when loan greater than 100 000
         public string CustFirstname { get => custFirstname; set => custFirstname = value; }
         public string CustLastname { get => custLastname; set => custLastname = value; }
         public int LoanNumber { get => loanNumber; set => loanNumber = value; }
         public int Term { get => term; set => term = value; }
         public double LoanAmount { get => loanAmount; set => loanAmount = value; }
+        public double InterestRate { get => interestRate; set => interestRate = value; }
 
         public override string ToString()
         {
