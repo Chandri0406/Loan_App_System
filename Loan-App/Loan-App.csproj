@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +47,12 @@
   <ItemGroup>
     <Compile Include="BussinessLoan.cs" />
     <Compile Include="CreateLoans.cs" />
+    <Compile Include="Forms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms.Designer.cs">
+      <DependentUpon>Forms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loan.cs" />
     <Compile Include="LoanConstants.cs" />
     <Compile Include="PersonalLoan.cs" />
@@ -53,6 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms.resx">
+      <DependentUpon>Forms.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
