@@ -37,7 +37,7 @@ namespace Loan_App
 
         public override string ToString()
         {
-            return $"A customer named: {custFirstname} {custLastname} has loan number: {loanNumber} with a loan amount of: R{loanAmount}, an interest rate of: %, and a loan term of: {term} years.";
+            return $"A customer name: \n{custFirstname} {custLastname} \nLoan number: {loanNumber} \nloan amount of: R{loanAmount} \nInterest rate of: % \nLoan term: {term}";
         }
     }
 }
