@@ -3,3 +3,8 @@ C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan-App.csproj.Suggested
 C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan_App.Forms.resources
 C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan-App.csproj.GenerateResource.cache
 C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan-App.csproj.CoreCompileInputs.cache
+C:\Projects\PRG 271\Loan_App_System\Loan-App\bin\Debug\Loan-App.exe.config
+C:\Projects\PRG 271\Loan_App_System\Loan-App\bin\Debug\Loan-App.exe
+C:\Projects\PRG 271\Loan_App_System\Loan-App\bin\Debug\Loan-App.pdb
+C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan-App.exe
+C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan-App.pdb
