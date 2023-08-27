@@ -7,20 +7,15 @@ using System.Threading.Tasks;
 namespace Loan_App
 {
     internal class CreateLoans
-    {
+    {   //Chandri Breytenbach 577398
         static void Main(string[] args)
-        {
-            //An application that creates an array of five Loans. Prompt the user for the current 
-            //prime interest rate.Then, in a loop, prompt the user for a loan type and all relevant information for
-            //that loan. Store the created Loan objects in the array.When data entry is complete, display all the
-            //loans.
-            
+        {       
             /*IMPORTANT LIST
              Loan Amount needs to be calculated
              Loan Amount limit must be set
              Form display needs fixing
              Form linking needs to be done
-             Bussiness class does nor need cust name or cust lastname, but needs bussiness name
+             Bussiness class does not need cust name or cust lastname, but needs bussiness name
              User manual needs to be created DO THAT TODAY
              Comments need to be added
              Names & Student nums need to be added
@@ -46,6 +41,7 @@ namespace Loan_App
                     Console.WriteLine("Loan Number:");
                     loanNumber = int.Parse(Console.ReadLine());
 
+                    Console.WriteLine("Bussiness Name:");
                     Console.WriteLine("Customer Name:");
                     custFirstname = Console.ReadLine();
 
@@ -81,6 +77,7 @@ namespace Loan_App
                 }
             }
 
+            Console.Clear();
 
             Console.WriteLine("\nLoans created:");
             foreach (Loan loan in loans)

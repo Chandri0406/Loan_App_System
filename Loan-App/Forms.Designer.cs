@@ -49,6 +49,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.LType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoanNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -221,7 +227,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.button1.Location = new System.Drawing.Point(12, 612);
+            this.button1.Location = new System.Drawing.Point(288, 610);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 17;
@@ -230,6 +236,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,6 +246,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LType,
+            this.LoanNumber,
+            this.FName,
+            this.LName,
+            this.LAmount,
+            this.Time});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -247,6 +261,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.GridColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView1.Location = new System.Drawing.Point(407, 106);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -259,15 +274,57 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(641, 489);
+            this.dataGridView1.Size = new System.Drawing.Size(806, 489);
             this.dataGridView1.TabIndex = 18;
+            // 
+            // LType
+            // 
+            this.LType.HeaderText = "Loan Type";
+            this.LType.MinimumWidth = 6;
+            this.LType.Name = "LType";
+            this.LType.Width = 125;
+            // 
+            // LoanNumber
+            // 
+            this.LoanNumber.HeaderText = "Loan Number";
+            this.LoanNumber.MinimumWidth = 6;
+            this.LoanNumber.Name = "LoanNumber";
+            this.LoanNumber.Width = 125;
+            // 
+            // FName
+            // 
+            this.FName.HeaderText = "First Name";
+            this.FName.MinimumWidth = 6;
+            this.FName.Name = "FName";
+            this.FName.Width = 125;
+            // 
+            // LName
+            // 
+            this.LName.HeaderText = "Last Name";
+            this.LName.MinimumWidth = 6;
+            this.LName.Name = "LName";
+            this.LName.Width = 125;
+            // 
+            // LAmount
+            // 
+            this.LAmount.HeaderText = "Loan Amount";
+            this.LAmount.MinimumWidth = 6;
+            this.LAmount.Name = "LAmount";
+            this.LAmount.Width = 125;
+            // 
+            // Time
+            // 
+            this.Time.HeaderText = "Term";
+            this.Time.MinimumWidth = 6;
+            this.Time.Name = "Time";
+            this.Time.Width = 125;
             // 
             // Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(1083, 715);
+            this.ClientSize = new System.Drawing.Size(1249, 715);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
@@ -315,5 +372,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoanNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
     }
 }
