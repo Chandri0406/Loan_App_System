@@ -8,3 +8,9 @@ C:\Projects\PRG 271\Loan_App_System\Loan-App\bin\Debug\Loan-App.exe
 C:\Projects\PRG 271\Loan_App_System\Loan-App\bin\Debug\Loan-App.pdb
 C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan-App.exe
 C:\Projects\PRG 271\Loan_App_System\Loan-App\obj\Debug\Loan-App.pdb
+C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\obj\Debug\Loan-App.csproj.AssemblyReference.cache
+C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\obj\Debug\Loan_App.Forms.resources
+C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\obj\Debug\Loan-App.csproj.GenerateResource.cache
+C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\obj\Debug\Loan-App.csproj.CoreCompileInputs.cache
+C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\obj\Debug\Loan-App.exe
+C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\obj\Debug\Loan-App.pdb

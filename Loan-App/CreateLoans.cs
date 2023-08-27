@@ -26,8 +26,8 @@ namespace Loan_App
              Names & Student nums need to be added
              */
 
-            string custFirstname, custLastname, term;
-            int loanNumber;
+            string custFirstname, custLastname;
+            int loanNumber, term;
             double loanAmount, primeInterestRate;
             Loan[] loans = new Loan[5];
 
@@ -56,9 +56,9 @@ namespace Loan_App
                     loanAmount = double.Parse(Console.ReadLine());
 
                     Console.WriteLine("Term:");
-                    term = Console.ReadLine();
+                    term = int.Parse(Console.ReadLine());
 
-                    loans[i] = new BussinessLoan(custFirstname, custLastname, loanNumber, term, loanAmount, primeInterestRate);
+                    loans[i] = new BusinessLoan(custFirstname, custLastname, loanNumber, term, loanAmount, primeInterestRate);
                 }
                 else // Personal Loan
                 {
@@ -75,7 +75,7 @@ namespace Loan_App
                     loanAmount = double.Parse(Console.ReadLine());
 
                     Console.WriteLine("Term:");
-                    term = Console.ReadLine();
+                    term = int.Parse(Console.ReadLine());
 
                     loans[i] = new PersonalLoan(custFirstname, custLastname, loanNumber, term, loanAmount, primeInterestRate);
                 }

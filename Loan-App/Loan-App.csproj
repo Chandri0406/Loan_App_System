@@ -52,8 +52,8 @@
     <Compile Include="Forms.Designer.cs">
       <DependentUpon>Forms.cs</DependentUpon>
     </Compile>
-    <Compile Include="Loan.cs" />
     <Compile Include="ILoanConstants.cs" />
+    <Compile Include="Loan.cs" />
     <Compile Include="PersonalLoan.cs" />
     <Compile Include="CreateLoans.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
