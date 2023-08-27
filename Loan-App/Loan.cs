@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Loan_App
 {
-    abstract class Loan
+    abstract class Loan : ILoanConstants
     {
         private string custFirstname, custLastname, term;
         private int loanNumber;
