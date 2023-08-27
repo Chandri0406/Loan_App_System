@@ -27,7 +27,6 @@ namespace Loan_App
             this.BusinessInterestrate = InterestRate + 1; // instructions : "PersonalLoan constructor sets the interest rate to 2% more than the current prime interest rate. "
 
         }
-
         public double BusinessInterestrate { get => businessInterestrate; set => businessInterestrate = value; }
         public string BusinessName { get => businessName; set => businessName = value; }
 

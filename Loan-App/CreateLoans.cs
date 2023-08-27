@@ -9,18 +9,29 @@ namespace Loan_App
     internal class CreateLoans
     {   //Chandri Breytenbach 577398
         static void Main(string[] args)
-        {       
+        {
             /*IMPORTANT LIST
              Loan Amount needs to be calculated
              Loan Amount limit must be set
              Form display needs fixing
              Form linking needs to be done
              Bussiness class does not need cust name or cust lastname, but needs bussiness name
-             User manual needs to be created DO THAT TODAY
+             User manual needs to be created 
              Comments need to be added
              Names & Student nums need to be added
-             */
+                  
+            Simple Interest (SI) = Principal (P) * Rate (R) * Time (T) / 100
+                                   Loan Amount   * B/P Rate * int terms / 100
 
+
+            Compound Interest (CI) = Principal (P) * (1 + Rate (R) / n)^(n * Time (T)) - Principal
+            
+            Terms                                   
+            Short-Term = 1 year
+            Medium-Term = 3 years
+            Long-Term = 5 years
+            */
+            
             string custFirstname, custLastname, term;
             int loanNumber;
             double loanAmount, primeInterestRate;
@@ -88,8 +99,7 @@ namespace Loan_App
                 }
             }
 
-            Console.ReadLine();
-        
+            Console.ReadLine(); 
         }
     }
 }
