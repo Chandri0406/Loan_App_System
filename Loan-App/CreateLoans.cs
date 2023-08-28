@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Loan_App
 {
@@ -23,7 +24,6 @@ namespace Loan_App
             Simple Interest (SI) = Principal (P) * Rate (R) * Time (T) / 100
                                    Loan Amount   * B/P Rate * int terms / 100
 
-
             Compound Interest (CI) = Principal (P) * (1 + Rate (R) / n)^(n * Time (T)) - Principal
             
             Terms                                   
@@ -31,7 +31,11 @@ namespace Loan_App
             Medium-Term = 3 years
             Long-Term = 5 years
             */
-            
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Forms());
+
             string custFirstname, custLastname, term;
             int loanNumber;
             double loanAmount, primeInterestRate;
@@ -99,7 +103,9 @@ namespace Loan_App
                 }
             }
 
-            Console.ReadLine(); 
+            Console.ReadLine();
+
+            
         }
     }
 }
