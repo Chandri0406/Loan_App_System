@@ -17,7 +17,7 @@ namespace Loan_App
         {
 
         }
-        public PersonalLoan(string businessName, string custFirstname, string custLastname, int loanNumber, int term, double loanAmount, double interestRate) : base(custFirstname, custLastname, loanNumber, term, loanAmount, interestRate)
+        public PersonalLoan(string custFirstname, string custLastname, int loanNumber, int term, double loanAmount, double interestRate) : base(custFirstname, custLastname, loanNumber, term, loanAmount, interestRate)
         {
             this.PersonalInterestrate = InterestRate + 2; // instructions : "PersonalLoan constructor sets the interest rate to 2% more than the current prime interest rate. "
 
