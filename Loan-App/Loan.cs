@@ -11,7 +11,7 @@ namespace Loan_App
     {
         private string custFirstname, custLastname, term;
         private int loanNumber;
-        private double loanAmount, primeInterestRate;
+        private double loanAmount, primeInterestRate, totalAmount;
 
         public Loan()
         {
@@ -28,8 +28,10 @@ namespace Loan_App
             this.InterestRate = primeInterestRate;
         }
 
-        public abstract int LoanTerm(int term);
+        //public abstract int LoanTerm(int term);
 
+
+        //Add Calculation empty method
 
         // need an event for when loan greater than 100 000
         //public event EventHandler loanAmountExceeded;

@@ -10,10 +10,12 @@ namespace Loan_App
     {
         private double personalInterestrate;
 
-        public PersonalLoan(string custFirstname, string custLastname, int loanNumber, string term, double loanAmount, double interestRate) : base(custFirstname, custLastname, term, loanNumber, loanAmount, interestRate)
+        public PersonalLoan(string custFirstname, string custLastname, string term, int loanNumber, double loanAmount, double interestRate) : base(custFirstname, custLastname, term, loanNumber, loanAmount, interestRate)
         {
             this.PersonalInterestrate = InterestRate + 2; // instructions : "PersonalLoan constructor sets the interest rate to 2% more than the current prime interest rate. "
         }
+
+        //Add Calculation override method based on personal interrest rate
 
         public double PersonalInterestrate { get => personalInterestrate; set => personalInterestrate = value; }
 
@@ -22,5 +24,5 @@ namespace Loan_App
             return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: {personalInterestrate}% \nLoan term: {Term}";
         }
     }
-    
+
 }
