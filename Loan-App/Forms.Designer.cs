@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.loanNum = new System.Windows.Forms.Label();
             this.custFName = new System.Windows.Forms.Label();
             this.custLName = new System.Windows.Forms.Label();
@@ -49,6 +49,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.LType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoanNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,7 +144,7 @@
             this.loanNumT.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loanNumT.Location = new System.Drawing.Point(31, 246);
             this.loanNumT.Name = "loanNumT";
-            this.loanNumT.Size = new System.Drawing.Size(234, 28);
+            this.loanNumT.Size = new System.Drawing.Size(309, 28);
             this.loanNumT.TabIndex = 9;
             // 
             // custFNameT
@@ -147,7 +153,7 @@
             this.custFNameT.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custFNameT.Location = new System.Drawing.Point(31, 318);
             this.custFNameT.Name = "custFNameT";
-            this.custFNameT.Size = new System.Drawing.Size(234, 28);
+            this.custFNameT.Size = new System.Drawing.Size(309, 28);
             this.custFNameT.TabIndex = 10;
             // 
             // custLNameT
@@ -156,7 +162,7 @@
             this.custLNameT.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custLNameT.Location = new System.Drawing.Point(31, 381);
             this.custLNameT.Name = "custLNameT";
-            this.custLNameT.Size = new System.Drawing.Size(234, 28);
+            this.custLNameT.Size = new System.Drawing.Size(309, 28);
             this.custLNameT.TabIndex = 11;
             // 
             // loanAmountT
@@ -165,7 +171,7 @@
             this.loanAmountT.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loanAmountT.Location = new System.Drawing.Point(31, 458);
             this.loanAmountT.Name = "loanAmountT";
-            this.loanAmountT.Size = new System.Drawing.Size(234, 28);
+            this.loanAmountT.Size = new System.Drawing.Size(309, 28);
             this.loanAmountT.TabIndex = 12;
             // 
             // businessLoan
@@ -204,16 +210,16 @@
             "Long-Term"});
             this.comboBox1.Location = new System.Drawing.Point(32, 531);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 32);
+            this.comboBox1.Size = new System.Drawing.Size(308, 32);
             this.comboBox1.TabIndex = 15;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 106);
+            this.groupBox1.Location = new System.Drawing.Point(12, 84);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(351, 489);
+            this.groupBox1.Size = new System.Drawing.Size(351, 511);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loan Details";
@@ -221,7 +227,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Montserrat", 10F);
-            this.button1.Location = new System.Drawing.Point(12, 612);
+            this.button1.Location = new System.Drawing.Point(288, 610);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 17;
@@ -230,44 +236,95 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LType,
+            this.LoanNumber,
+            this.FName,
+            this.LName,
+            this.LAmount,
+            this.Time});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView1.GridColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView1.Location = new System.Drawing.Point(407, 106);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(641, 489);
+            this.dataGridView1.Size = new System.Drawing.Size(806, 489);
             this.dataGridView1.TabIndex = 18;
+            // 
+            // LType
+            // 
+            this.LType.HeaderText = "Loan Type";
+            this.LType.MinimumWidth = 6;
+            this.LType.Name = "LType";
+            this.LType.Width = 125;
+            // 
+            // LoanNumber
+            // 
+            this.LoanNumber.HeaderText = "Loan Number";
+            this.LoanNumber.MinimumWidth = 6;
+            this.LoanNumber.Name = "LoanNumber";
+            this.LoanNumber.Width = 125;
+            // 
+            // FName
+            // 
+            this.FName.HeaderText = "First Name";
+            this.FName.MinimumWidth = 6;
+            this.FName.Name = "FName";
+            this.FName.Width = 125;
+            // 
+            // LName
+            // 
+            this.LName.HeaderText = "Last Name";
+            this.LName.MinimumWidth = 6;
+            this.LName.Name = "LName";
+            this.LName.Width = 125;
+            // 
+            // LAmount
+            // 
+            this.LAmount.HeaderText = "Loan Amount";
+            this.LAmount.MinimumWidth = 6;
+            this.LAmount.Name = "LAmount";
+            this.LAmount.Width = 125;
+            // 
+            // Time
+            // 
+            this.Time.HeaderText = "Term";
+            this.Time.MinimumWidth = 6;
+            this.Time.Name = "Time";
+            this.Time.Width = 125;
             // 
             // Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(1083, 715);
+            this.ClientSize = new System.Drawing.Size(1257, 662);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
@@ -315,5 +372,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoanNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
     }
 }
