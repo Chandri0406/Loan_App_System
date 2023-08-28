@@ -36,7 +36,7 @@ namespace Loan_App
             primeInterestRate = double.Parse(Console.ReadLine());
 
             //A loop for 5 loans
-            for (int i=0; i<2; i++)
+            for (int i=0; i<1; i++)
             {
                 Console.WriteLine("Type of loan: \n 1. Business Loan \n 2. Personal Loan");
                 int choice = int.Parse(Console.ReadLine());
@@ -57,8 +57,11 @@ namespace Loan_App
 
                     Console.WriteLine("Term:");
                     term = int.Parse(Console.ReadLine());
+                    
+
 
                     loans[i] = new BusinessLoan(custFirstname, custLastname, loanNumber, term, loanAmount, primeInterestRate);
+                    
                 }
                 else // Personal Loan
                 {
@@ -79,6 +82,7 @@ namespace Loan_App
 
                     loans[i] = new PersonalLoan(custFirstname, custLastname, loanNumber, term, loanAmount, primeInterestRate);
                 }
+   
             }
 
 

@@ -14,3 +14,6 @@ C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\obj\Debug\Loan-App.cspr
 C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\obj\Debug\Loan-App.csproj.CoreCompileInputs.cache
 C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\obj\Debug\Loan-App.exe
 C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\obj\Debug\Loan-App.pdb
+C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\bin\Debug\Loan-App.exe.config
+C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\bin\Debug\Loan-App.exe
+C:\Users\Aevet\Documents\GitHub\Loan_App_System\Loan-App\bin\Debug\Loan-App.pdb

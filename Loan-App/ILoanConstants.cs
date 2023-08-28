@@ -14,6 +14,6 @@ namespace Loan_App
         int shortTermLoan { get; set; }
         int mediumTermLoan { get; set; }
         int longTermLoan { get; set; }
-        void LoanTerm(int term);
+
     }
 }

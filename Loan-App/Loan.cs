@@ -9,8 +9,8 @@ namespace Loan_App
 {
     abstract class Loan : ILoanConstants
     {
-        private string custFirstname, custLastname;
-        private int loanNumber, term;
+        private string custFirstname, custLastname, term;
+        private int loanNumber;
         private double loanAmount, primeInterestRate;
 
         public Loan()
@@ -18,7 +18,7 @@ namespace Loan_App
             
         }
 
-        public Loan(string custFirstname, string custLastname, int term, int loanNumber, double loanAmount, double primeInterestRate)
+        public Loan(string custFirstname, string custLastname, string term, int loanNumber, double loanAmount, double primeInterestRate)
         {
             this.CustFirstname = custFirstname;
             this.CustLastname = custLastname;
@@ -28,14 +28,14 @@ namespace Loan_App
             this.InterestRate = primeInterestRate;
         }
 
-        protected abstract void LoanTerm(int term);
+        public abstract int LoanTerm(int term);
 
 
         // need an event for when loan greater than 100 000
-        public event EventHandler loanAmountExceeded;
+        //public event EventHandler loanAmountExceeded;
         public string CustFirstname { get => custFirstname; set => custFirstname = value; }
         public string CustLastname { get => custLastname; set => custLastname = value; }
-        public int Term { get => term; set => term = value; }
+        public string Term { get => term; set => term = value; }
         public int LoanNumber { get => loanNumber; set => loanNumber = value; }
         public double LoanAmount { get => loanAmount; set => loanAmount = value; }
         public double InterestRate { get => primeInterestRate; set => primeInterestRate = value; }
@@ -50,12 +50,6 @@ namespace Loan_App
             return $"A customer name: \n{custFirstname} {custLastname} \nLoan number: {loanNumber} \nloan amount of: R{loanAmount} \nInterest rate of: % \nLoan term: {term}";
         }
 
-        void ILoanConstants.LoanTerm(int term)
-        {
-            if (term != shortTermLoan || term != mediumTermLoan || term != longTermLoan)
-            {
-                this.term = shortTermLoan;
-            }
-        }
+        
     }
 }
