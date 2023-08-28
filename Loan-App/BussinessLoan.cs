@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Loan_App
 {
-    internal class BussinessLoan : Loan
+    internal class BusinessLoan : Loan
     {   
         private double businessInterestrate ;
         private string businessName;
@@ -22,7 +22,7 @@ namespace Loan_App
             this.BusinessName = businessName;
         }*/
 
-        public BussinessLoan(string custFirstname, string custLastname, int loanNumber, string term, double loanAmount, double interestRate) : base(custFirstname, custLastname, term, loanNumber, loanAmount, interestRate)
+        public BusinessLoan(string custFirstname, string custLastname, int loanNumber, string term, double loanAmount, double interestRate) : base(custFirstname, custLastname, term, loanNumber, loanAmount, interestRate)
         {
             this.BusinessInterestrate = InterestRate + 1; // instructions : "PersonalLoan constructor sets the interest rate to 2% more than the current prime interest rate. "
 
