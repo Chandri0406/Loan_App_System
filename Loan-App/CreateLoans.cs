@@ -36,8 +36,8 @@ namespace Loan_App
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Forms());
 
-            string custFirstname, custLastname, term;
-            int loanNumber;
+            string custFirstname, custLastname;
+            int loanNumber, term;
             double loanAmount, primeInterestRate;
             Loan[] loans = new Loan[5];
 
@@ -46,7 +46,7 @@ namespace Loan_App
             primeInterestRate = double.Parse(Console.ReadLine());
 
             //A loop for 5 loans
-            for (int i=0; i<2; i++)
+            for (int i=0; i<1; i++)
             {
                 Console.WriteLine("Type of loan: \n 1. Business Loan \n 2. Personal Loan");
                 int choice = int.Parse(Console.ReadLine());
@@ -67,9 +67,12 @@ namespace Loan_App
                     loanAmount = double.Parse(Console.ReadLine());
 
                     Console.WriteLine("Term:");
-                    term = Console.ReadLine();
+                    term = int.Parse(Console.ReadLine());
+                    
 
-                    loans[i] = new BussinessLoan(custFirstname, custLastname, loanNumber, term, loanAmount, primeInterestRate);
+
+                    loans[i] = new BusinessLoan(custFirstname, custLastname, loanNumber, term, loanAmount, primeInterestRate);
+                    
                 }
                 else // Personal Loan
                 {
@@ -86,10 +89,11 @@ namespace Loan_App
                     loanAmount = double.Parse(Console.ReadLine());
 
                     Console.WriteLine("Term:");
-                    term = Console.ReadLine();
+                    term = int.Parse(Console.ReadLine());
 
                     loans[i] = new PersonalLoan(custFirstname, custLastname, loanNumber, term, loanAmount, primeInterestRate);
                 }
+   
             }
 
             Console.Clear();

@@ -22,4 +22,5 @@ namespace Loan_App
             return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: {personalInterestrate}% \nLoan term: {Term}";
         }
     }
+    
 }
