@@ -40,7 +40,12 @@ namespace Loan_App
 
         public override string ToString()
         {
-            return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: {businessInterestrate}% \nLoan term: {Term}";
+            return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: {bussinessInterestrate}% \nLoan term: {Term}";
+        }
+
+        public override double CalculateLoan()
+        {
+            return base.CalculateLoan();
         }
     }
 }

@@ -19,6 +19,11 @@ namespace Loan_App
 
         public double PersonalInterestrate { get => personalInterestrate; set => personalInterestrate = value; }
 
+        public override double CalculateLoan()
+        {
+            return base.CalculateLoan();
+        }
+
         public override string ToString()
         {
             return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: {personalInterestrate}% \nLoan term: {Term}";
