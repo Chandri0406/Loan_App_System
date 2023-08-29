@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussinessLoan.cs" />
+    <Compile Include="Counter.cs" />
     <Compile Include="Forms.cs">
       <SubType>Form</SubType>
     </Compile>

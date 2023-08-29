@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Loan_App
 {
     internal class CreateLoans
     {
+
         static void Main(string[] args)
         {
             //An application that creates an array of five Loans. Prompt the user for the current 
             //prime interest rate.Then, in a loop, prompt the user for a loan type and all relevant information for
             //that loan. Store the created Loan objects in the array.When data entry is complete, display all the
             //loans.
-            
+
             /*IMPORTANT LIST
              Loan Amount needs to be calculated
              Loan Amount limit must be set
@@ -52,8 +55,14 @@ namespace Loan_App
                     Console.WriteLine("Customer Surname:");
                     custLastname = Console.ReadLine();
 
+                    
                     Console.WriteLine("Loan Amount:");
                     loanAmount = double.Parse(Console.ReadLine());
+
+                    if (loanAmount >= 100000)
+                    {
+                        loanAmount = Loan.LoanAmountExceeded(loanAmount);
+                    }
 
                     Console.WriteLine("Term:");
                     term = int.Parse(Console.ReadLine());
@@ -77,8 +86,14 @@ namespace Loan_App
                     Console.WriteLine("Loan Amount:");
                     loanAmount = double.Parse(Console.ReadLine());
 
+                    if (loanAmount >= 100000)
+                    {
+                        loanAmount = Loan.LoanAmountExceeded(loanAmount);
+                    }
+
                     Console.WriteLine("Term:");
                     term = int.Parse(Console.ReadLine());
+
 
                     loans[i] = new PersonalLoan(custFirstname, custLastname, loanNumber, term, loanAmount, primeInterestRate);
                 }
@@ -95,8 +110,14 @@ namespace Loan_App
                 }
             }
 
+            Console.WriteLine("Press any key to exit...");
             Console.ReadLine();
         
         }
+
+        
+
     }
+
+
 }
