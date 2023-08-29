@@ -75,5 +75,9 @@ namespace Loan_App
             return 0;
         }
 
+        public virtual double CalculateLoan()
+        {
+            return 0;
+        }
     }
 }

@@ -18,24 +18,19 @@ namespace Loan_App
             //that loan. Store the created Loan objects in the array.When data entry is complete, display all the
             //loans.
 
-    {   /* STUDENTS
-         * Chandri Breytenbach 577398
-         * Frank Peter Smal 577298
-         * Ashley Vetter 577605
-         * Kelo Letsoalo 577613
-         */
-        static void Main(string[] args)
-        {
+            /* STUDENTS
+             * Chandri Breytenbach 577398
+             * Frank Peter Smal 577298
+             * Ashley Vetter 577605
+             * Kelo Letsoalo 577613
+             */
+        
             /*IMPORTANT LIST
              Loan Amount needs to be calculated
              Loan Amount limit must be set
              Bussiness class does not need cust name or cust lastname, but needs bussiness name
              User manual needs to be created 
              Comments need to be added
-             
-                  
-            Simple Interest (SI) = Principal (P) * Rate (R) * Time (T) / 100
-                                   Loan Amount   * B/P Rate * int termPeriod / 100
             */
 
             string custFirstname, custLastname, term, businessName;
@@ -67,7 +62,6 @@ namespace Loan_App
                     Console.WriteLine("Customer Surname:");
                     custLastname = Console.ReadLine();
 
-                    
                     Console.WriteLine("Loan Amount:");
                     loanAmount = double.Parse(Console.ReadLine());
 
