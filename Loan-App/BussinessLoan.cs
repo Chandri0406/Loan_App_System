@@ -24,7 +24,7 @@ namespace Loan_App
 
         public BussinessLoan(string custFirstname, string custLastname, string term, int loanNumber,  double loanAmount, double interestRate, double termPeriod) : base(custFirstname, custLastname, term, loanNumber, loanAmount, interestRate, termPeriod)
         {
-            this.BussinessInterestrate = InterestRate + 1; // instructions : "PersonalLoan constructor sets the interest rate to 2% more than the current prime interest rate. "
+            this.BusinessInterestrate = InterestRate + 1; // instructions : "PersonalLoan constructor sets the interest rate to 2% more than the current prime interest rate. "
 
         }
 
@@ -46,12 +46,12 @@ namespace Loan_App
 
         public override double CalculateLoan()
         {
-            return LoanAmount * ((1 + bussinessInterestrate * TermPeriod) / 100);
+            return LoanAmount * (1 + (businessInterestrate / 100) * TermPeriod);
         }
 
         public override string ToString()
         {
-            return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: {bussinessInterestrate}% \nLoan term: {Term} \nTotal amount owed at due date: R{CalculateLoan()}";
+            return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: {businessInterestrate}% \nLoan term: {Term} \nTotal amount owed at due date: R{CalculateLoan()}";
         }
     }
 }
