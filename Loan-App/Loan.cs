@@ -47,7 +47,7 @@ namespace Loan_App
 
         public override string ToString()
         {
-            return $"A customer name: \n{custFirstname} {custLastname} \nLoan number: {loanNumber} \nloan amount of: R{loanAmount} \nInterest rate of: % \nLoan term: {term}";
+            return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: % \nLoan term: {Term} \nTotal amount owed at due date: R ";
         }
 
         // Handle the event which is raised by publisher

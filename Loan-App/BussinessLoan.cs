@@ -7,18 +7,19 @@ using System.Threading.Tasks;
 namespace Loan_App
 {
     internal class BusinessLoan : Loan
-    {   
-        private double businessInterestrate ;
+    {
+        private double businessInterestrate, totalAmount;
+        private int termPeriod;
         private string businessName;
         /*
         how this would work 
-        basically the program would starrt by asking if the person is a business or an individual
+        basically the program would start by asking if the person is a business or an individual
         if they are a business then all it would need to do is add 1 to the banks interest rate
          */
 
-        /*public BussinessLoan(string businessName, double businessInterestrate, string custFirstname, string custLastname, int loanNumber, string term, double loanAmount, double interestRate) : base(custFirstname, custLastname, term, loanNumber,  loanAmount , interestRate)
+        public BusinessLoan(string businessName, string custFirstname, string custLastname, string term, int loanNumber,  double loanAmount, double interestRate) : base(custFirstname, custLastname, term, loanNumber,  loanAmount , interestRate)
         {
-            this.BusinessInterestrate = InterestRate + 1; // instructions : "BusinessLoan constructor sets the interest rate to 1% more than the current prime interest rate. "
+            this.BusinessInterestrate = InterestRate + 1; // BusinessLoan constructor sets the interest rate to 1% more than the current prime interest rate.
             this.BusinessName = businessName;
         }*/
 
@@ -28,17 +29,19 @@ namespace Loan_App
 
         }
 
+        public int termPeroid { get => termPeriod; set => termPeriod = value; }
         public double BusinessInterestrate { get => businessInterestrate; set => businessInterestrate = value; }
         public string BusinessName { get => businessName; set => businessName = value; }
 
-        /*public void bLoan() // call this method in the eveht of a business loan
+        public override double CalculateLoan()
         {
-            businessInterestrate = InterestRate + 1;
-        }*/
+            totalAmount = LoanAmount * (1 + (businessInterestrate / 100) * termPeriod);
+            return totalAmount;
+        }
 
         public override string ToString()
         {
-            return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: {businessInterestrate}% \nLoan term: {Term}";
+            return $"Business Name: {businessName} \nCustomer name: {CustFirstname} \nCustomer surname: {CustLastname} \nLoan number: {LoanNumber} \nLoan amount: R {LoanAmount} \nInterest rate: {businessInterestrate}% \nLoan term: {Term} \nTotal amount owed at due date: R {totalAmount}";
         }
 
     }

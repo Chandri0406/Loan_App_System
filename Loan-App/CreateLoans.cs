@@ -18,19 +18,28 @@ namespace Loan_App
             //that loan. Store the created Loan objects in the array.When data entry is complete, display all the
             //loans.
 
+    {   /* STUDENTS
+         * Chandri Breytenbach 577398
+         * Frank Peter Smal 577298
+         * Ashley Vetter 577605
+         * Kelo Letsoalo 577613
+         */
+        static void Main(string[] args)
+        {
             /*IMPORTANT LIST
              Loan Amount needs to be calculated
              Loan Amount limit must be set
-             Form display needs fixing
-             Form linking needs to be done
-             Bussiness class does nor need cust name or cust lastname, but needs bussiness name
-             User manual needs to be created DO THAT TODAY
+             Bussiness class does not need cust name or cust lastname, but needs bussiness name
+             User manual needs to be created 
              Comments need to be added
-             Names & Student nums need to be added
-             */
+             
+                  
+            Simple Interest (SI) = Principal (P) * Rate (R) * Time (T) / 100
+                                   Loan Amount   * B/P Rate * int termPeriod / 100
+            */
 
-            string custFirstname, custLastname;
-            int loanNumber, term;
+            string custFirstname, custLastname, term, businessName;
+            int loanNumber, termChoice, termPeriod;;
             double loanAmount, primeInterestRate;
             Loan[] loans = new Loan[5];
 
@@ -49,6 +58,9 @@ namespace Loan_App
                     Console.WriteLine("Loan Number:");
                     loanNumber = int.Parse(Console.ReadLine());
 
+                    Console.WriteLine("Business Name:");
+                    businessName = Console.ReadLine();
+
                     Console.WriteLine("Customer Name:");
                     custFirstname = Console.ReadLine();
 
@@ -65,12 +77,35 @@ namespace Loan_App
                     }
 
                     Console.WriteLine("Term:");
-                    term = int.Parse(Console.ReadLine());
-                    
+                    Console.WriteLine("1. Short Term");
+                    Console.WriteLine("2. Medium Term");
+                    Console.WriteLine("3. Long Term");
 
+                    termChoice = int.Parse(Console.ReadLine());
 
-                    loans[i] = new BusinessLoan(custFirstname, custLastname, loanNumber, term, loanAmount, primeInterestRate);
+                    // Create event like this switch and then call event after term choice
+
+                    switch (termChoice)
+                    {
+                        case 1:
+                            termPeriod = 1;
+                            term = "Short Term";
+                            break;
+                        case 2:
+                            termPeriod = 3;
+                            term = "Medium Term";
+                            break;
+                        case 3:
+                            termPeriod = 5;
+                            term = "Long Term";
+                            break;
+                        default:
+                            termPeriod = 1;
+                            term = "Short Term";
+                            break;
+                    }
                     
+                    loans[i] = new BusinessLoan(businessName, custFirstname, custLastname, term, loanNumber, loanAmount, primeInterestRate);
                 }
                 else // Personal Loan
                 {
@@ -92,27 +127,54 @@ namespace Loan_App
                     }
 
                     Console.WriteLine("Term:");
-                    term = int.Parse(Console.ReadLine());
+                    Console.WriteLine("1. Short Term");
+                    Console.WriteLine("2. Medium Term");
+                    Console.WriteLine("3. Long Term");
 
 
                     loans[i] = new PersonalLoan(custFirstname, custLastname, loanNumber, term, loanAmount, primeInterestRate);
+                    termChoice = int.Parse(Console.ReadLine());
+
+                    switch (termChoice)
+                    {
+                        case 1:
+                            termPeriod = 1;
+                            term = "Short Term";
+                            break;
+                        case 2:
+                            termPeriod = 3;
+                            term = "Medium Term";
+                            break;
+                        case 3:
+                            termPeriod = 5;
+                            term = "Long Term";
+                            break;
+                        default:
+                            termPeriod = 1;
+                            term = "Short Term";
+                            break;
+                    }
+
+
+                    loans[i] = new PersonalLoan(custFirstname, custLastname, term, loanNumber,  loanAmount, primeInterestRate);
                 }
    
             }
 
+            Console.Clear();
 
             Console.WriteLine("\nLoans created:");
             foreach (Loan loan in loans)
             {
                 if (loan != null)
                 {
+                    loan.CalculateLoan();
                     Console.WriteLine("\n" + loan.ToString());
                 }
             }
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadLine();
-        
         }
 
         
