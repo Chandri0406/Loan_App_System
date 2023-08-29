@@ -40,7 +40,7 @@ namespace Loan_App
 
         public override double CalculateLoan()
         {
-            return LoanAmount * ((1 + bussinessInterestrate * TermPeriod) / 100);
+            return LoanAmount * (1 + (bussinessInterestrate / 100) * TermPeriod);
         }
 
         public override string ToString()
