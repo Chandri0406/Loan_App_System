@@ -23,6 +23,7 @@ namespace Loan_App
             //Raise actual event
             ThresholdReached?.Invoke(this, e);
         }
+
         // 4. Handle the event which is raised by publisher
         internal static void OnThresholdReached(object sender, ThresholdReachedEventArgs e)
         {
@@ -30,13 +31,11 @@ namespace Loan_App
             Console.WriteLine("=============================================");
             Console.WriteLine("Loan amount exceeded the maximum threshold.");
             Console.WriteLine("Please enter a value under 100,000.");
-
         }
     }
 
     internal class ThresholdReachedEventArgs : EventArgs
     {
         public int Threshold { get; set; }
-
     }
 }

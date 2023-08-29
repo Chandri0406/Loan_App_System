@@ -11,7 +11,7 @@ namespace Loan_App
     abstract class Loan : ILoanConstants
     {
         private string custFirstname, custLastname, term;
-        private int loanNumber, termChoice;
+        private int loanNumber, termPeriod;
         private double loanAmount, primeInterestRate;
 
         public Loan()
@@ -19,17 +19,13 @@ namespace Loan_App
             
         }
 
-        public Loan(string custFirstname, string custLastname, string term, int termChoice, int loanNumber, double loanAmount, double primeInterestRate)
+        public Loan(string custFirstname, string custLastname, string term, int termPeriod, int loanNumber, double loanAmount, double primeInterestRate)
         {
             this.CustFirstname = custFirstname;
             this.CustLastname = custLastname;
             this.LoanNumber = loanNumber;
             this.Term = term;
-            this.TermChoice = termChoice;
-            if (termChoice != shortTermLoan && termChoice != mediumTermLoan && termChoice != longTermLoan)
-            {
-                this.termChoice = shortTermLoan;
-            }
+            this.TermPeriod = termPeriod;
             this.LoanAmount = loanAmount;
             this.InterestRate = primeInterestRate;
         }
@@ -37,7 +33,7 @@ namespace Loan_App
         public string CustFirstname { get => custFirstname; set => custFirstname = value; }
         public string CustLastname { get => custLastname; set => custLastname = value; }
         public string Term { get => term; set => term = value; }
-        public int TermChoice { get => termChoice; set => termChoice = value; }
+        public int TermPeriod { get => termPeriod; set => termPeriod = value; }
         public int LoanNumber { get => loanNumber; set => loanNumber = value; }
         public double LoanAmount { get => loanAmount; set => loanAmount = value; }
         public double InterestRate { get => primeInterestRate; set => primeInterestRate = value; }
@@ -45,7 +41,6 @@ namespace Loan_App
         public int mediumTermLoan { get; set; } = 3;
         public int longTermLoan { get; set; } = 5;
         public string companyName { get; set; }
-
 
         public override string ToString()
         {
@@ -58,7 +53,6 @@ namespace Loan_App
             Console.WriteLine($"Loan Threshold {e.Threshold}!!!");
             Console.WriteLine("=============================================");
             Console.WriteLine("Please enter a value under 100,000.");
-
         }
 
         public static double LoanAmountExceeded(double loanAmount)
@@ -72,9 +66,9 @@ namespace Loan_App
                 counter.DoSomething();
                 Console.WriteLine("Loan Amount:");
                 loanAmount = double.Parse(Console.ReadLine());
-                return loanAmount;
+                LoanAmountExceeded(loanAmount);
             }
-            return 0;
+            return loanAmount;
         }
 
         public virtual double CalculateLoan()
