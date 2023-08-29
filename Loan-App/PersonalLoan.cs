@@ -8,25 +8,26 @@ namespace Loan_App
 {
     internal class PersonalLoan : Loan
     {
-        private double personalInterestrate;
+        private double personalInterestrate, totalAmount;
+        private int termPeriod;
 
-        public PersonalLoan(string custFirstname, string custLastname, string term, int loanNumber, double loanAmount, double interestRate, double termPeriod) : base(custFirstname, custLastname, term, loanNumber, loanAmount, interestRate, termPeriod)
+        public PersonalLoan(string custFirstname, string custLastname, string term, int loanNumber, double loanAmount, double interestRate) : base(custFirstname, custLastname, term, loanNumber, loanAmount, interestRate)
         {
             this.PersonalInterestrate = InterestRate + 2; // instructions : "PersonalLoan constructor sets the interest rate to 2% more than the current prime interest rate. "
         }
 
-        //Add Calculation override method based on personal interrest rate
-
+        public int termPeroid { get => termPeriod; set => termPeriod = value; }
         public double PersonalInterestrate { get => personalInterestrate; set => personalInterestrate = value; }
 
         public override double CalculateLoan()
         {
-            return LoanAmount * (1 + (personalInterestrate / 100) * TermPeriod);
+            totalAmount = LoanAmount * (1 + (personalInterestrate / 100) * termPeriod);
+            return totalAmount;
         }
 
         public override string ToString()
         {
-            return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: {personalInterestrate}% \nLoan term: {Term} \nTotal amount owed at due date: R{CalculateLoan()}";
+            return $"Customer name: {CustFirstname} \nCustomer surname: {CustLastname} \nLoan number: {LoanNumber} \nLoan amount: R {LoanAmount} \nInterest rate: {personalInterestrate}% \nLoan term: {Term} \nTotal amount owed at due date: R {totalAmount}";
         }
     }
 
