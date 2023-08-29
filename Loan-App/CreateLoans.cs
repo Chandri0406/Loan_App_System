@@ -7,37 +7,27 @@ using System.Threading.Tasks;
 namespace Loan_App
 {
     internal class CreateLoans
-    {   //Chandri Breytenbach 577398
+    {   /* STUDENTS
+         * Chandri Breytenbach 577398
+         * Frank Peter Smal 577298
+         * Ashley Vetter 577605
+         * Kelo Letsoalo 577613
+         */
         static void Main(string[] args)
         {
             /*IMPORTANT LIST
              Loan Amount needs to be calculated
              Loan Amount limit must be set
-             Form display needs fixing
-             Form linking needs to be done
-             IF we do forms Personal and Business need seperate displays
-             AND we can possibly add search if we really wanted to
              Bussiness class does not need cust name or cust lastname, but needs bussiness name
              User manual needs to be created 
              Comments need to be added
-             Names & Student nums need to be added
              
                   
             Simple Interest (SI) = Principal (P) * Rate (R) * Time (T) / 100
                                    Loan Amount   * B/P Rate * int termPeriod / 100
-
-            Compound Interest (CI) = Principal (P) * (1 + Rate (R) / n)^(n * Time (T)) - Principal
-                                     Loan Amount
-
-            Change Loan class aka base class. Does not need contraints
-            
-            Terms                                   
-            Short-Term = 1 year
-            Medium-Term = 3 years
-            Long-Term = 5 years
             */
 
-            string custFirstname, custLastname, term;
+            string custFirstname, custLastname, term, businessName;
             int loanNumber, termChoice;
             double loanAmount, primeInterestRate, termPeriod;
             Loan[] loans = new Loan[5];
@@ -58,6 +48,8 @@ namespace Loan_App
                     loanNumber = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Bussiness Name:");
+                    businessName = Console.ReadLine();
+
                     Console.WriteLine("Customer Name:");
                     custFirstname = Console.ReadLine();
 
@@ -98,8 +90,7 @@ namespace Loan_App
 
                     // Calculation Method should be added here
                     
-                    loans[i] = new BussinessLoan(custFirstname, custLastname, term, loanNumber, loanAmount, primeInterestRate);
-                    
+                    loans[i] = new BusinessLoan(businessName, custFirstname, custLastname, term, loanNumber, loanAmount, primeInterestRate);
                 }
                 else // Personal Loan
                 {
@@ -125,7 +116,7 @@ namespace Loan_App
                     switch (termChoice)
                     {
                         case 1:
-                            double termPeriod = 1;
+                            termPeriod = 1;
                             term = "Short Term";
                             break;
                         case 2:
@@ -159,8 +150,6 @@ namespace Loan_App
             }
 
             Console.ReadLine();
-
-            
         }
     }
 }
