@@ -10,6 +10,9 @@ namespace Loan_App
 {
     internal class CreateLoans
     {
+        public delegate void TermChosenEventHandler(int termPeriod);
+
+        public static event TermChosenEventHandler TermChosenEvent;
 
         static void Main(string[] args)
         {
@@ -24,17 +27,9 @@ namespace Loan_App
              * Ashley Vetter 577605
              * Kelo Letsoalo 577613
              */
-        
-            /*IMPORTANT LIST
-             Loan Amount needs to be calculated
-             Loan Amount limit must be set
-             Bussiness class does not need cust name or cust lastname, but needs bussiness name
-             User manual needs to be created 
-             Comments need to be added
-            */
 
             string custFirstname, custLastname, term, businessName;
-            int loanNumber, termChoice, termPeriod;;
+            int loanNumber, termChoice, termPeriod;
             double loanAmount, primeInterestRate;
             Loan[] loans = new Loan[5];
 
@@ -98,8 +93,10 @@ namespace Loan_App
                             term = "Short Term";
                             break;
                     }
-                    
-                    loans[i] = new BusinessLoan(businessName, custFirstname, custLastname, term, loanNumber, loanAmount, primeInterestRate);
+
+                    TermChosenEvent?.Invoke(termPeriod);
+
+                    loans[i] = new BusinessLoan(businessName, custFirstname, term, custLastname, termChoice, loanNumber, loanAmount, primeInterestRate);
                 }
                 else // Personal Loan
                 {
@@ -125,8 +122,6 @@ namespace Loan_App
                     Console.WriteLine("2. Medium Term");
                     Console.WriteLine("3. Long Term");
 
-
-                    loans[i] = new PersonalLoan(custFirstname, custLastname, loanNumber, term, loanAmount, primeInterestRate);
                     termChoice = int.Parse(Console.ReadLine());
 
                     switch (termChoice)
@@ -149,8 +144,9 @@ namespace Loan_App
                             break;
                     }
 
+                    TermChosenEvent?.Invoke(termPeriod);
 
-                    loans[i] = new PersonalLoan(custFirstname, custLastname, term, loanNumber,  loanAmount, primeInterestRate);
+                    loans[i] = new PersonalLoan(custFirstname, custLastname, term, termChoice, loanNumber,  loanAmount, primeInterestRate);
                 }
    
             }

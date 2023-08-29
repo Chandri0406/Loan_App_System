@@ -10,8 +10,8 @@ namespace Loan_App
 {
     abstract class Loan : ILoanConstants
     {
-        private string custFirstname, custLastname;
-        private int loanNumber, term;
+        private string custFirstname, custLastname, term;
+        private int loanNumber, termChoice;
         private double loanAmount, primeInterestRate;
 
         public Loan()
@@ -19,15 +19,16 @@ namespace Loan_App
             
         }
 
-        public Loan(string custFirstname, string custLastname, int term, int loanNumber, double loanAmount, double primeInterestRate)
+        public Loan(string custFirstname, string custLastname, string term, int termChoice, int loanNumber, double loanAmount, double primeInterestRate)
         {
             this.CustFirstname = custFirstname;
             this.CustLastname = custLastname;
             this.LoanNumber = loanNumber;
             this.Term = term;
-            if (term != shortTermLoan && term != mediumTermLoan && term!= longTermLoan)
+            this.TermChoice = termChoice;
+            if (termChoice != shortTermLoan && termChoice != mediumTermLoan && termChoice != longTermLoan)
             {
-                this.term = shortTermLoan;
+                this.termChoice = shortTermLoan;
             }
             this.LoanAmount = loanAmount;
             this.InterestRate = primeInterestRate;
@@ -35,7 +36,8 @@ namespace Loan_App
 
         public string CustFirstname { get => custFirstname; set => custFirstname = value; }
         public string CustLastname { get => custLastname; set => custLastname = value; }
-        public int Term { get => term; set => term = value; }
+        public string Term { get => term; set => term = value; }
+        public int TermChoice { get => termChoice; set => termChoice = value; }
         public int LoanNumber { get => loanNumber; set => loanNumber = value; }
         public double LoanAmount { get => loanAmount; set => loanAmount = value; }
         public double InterestRate { get => primeInterestRate; set => primeInterestRate = value; }
@@ -47,7 +49,7 @@ namespace Loan_App
 
         public override string ToString()
         {
-            return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: % \nLoan term: {Term} \nTotal amount owed at due date: R ";
+            return $"Customer name: {CustFirstname} \nCustomer surname: {CustLastname} \nLoan number: {LoanNumber} \nLoan amount: R {LoanAmount} \nInterest rate: % \nLoan term: {Term} \nTotal amount owed at due date: R "; ;
         }
 
         // Handle the event which is raised by publisher

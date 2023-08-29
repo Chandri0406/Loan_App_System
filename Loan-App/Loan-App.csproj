@@ -47,12 +47,6 @@
   <ItemGroup>
     <Compile Include="BussinessLoan.cs" />
     <Compile Include="Counter.cs" />
-    <Compile Include="Forms.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms.Designer.cs">
-      <DependentUpon>Forms.cs</DependentUpon>
-    </Compile>
     <Compile Include="ILoanConstants.cs" />
     <Compile Include="Loan.cs" />
     <Compile Include="PersonalLoan.cs" />
