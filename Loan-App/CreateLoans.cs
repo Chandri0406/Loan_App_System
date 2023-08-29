@@ -28,8 +28,8 @@ namespace Loan_App
             */
 
             string custFirstname, custLastname, term, businessName;
-            int loanNumber, termChoice;
-            double loanAmount, primeInterestRate, termPeriod;
+            int loanNumber, termChoice, termPeriod;;
+            double loanAmount, primeInterestRate;
             Loan[] loans = new Loan[5];
 
             //A prompt for the prime interest rate
@@ -37,7 +37,7 @@ namespace Loan_App
             primeInterestRate = double.Parse(Console.ReadLine());
 
             //A loop for 5 loans
-            for (int i=0; i<2; i++)
+            for (int i=0; i<1; i++)
             {
                 Console.WriteLine("Type of loan: \n 1. Business Loan \n 2. Personal Loan");
                 int choice = int.Parse(Console.ReadLine());
@@ -47,7 +47,7 @@ namespace Loan_App
                     Console.WriteLine("Loan Number:");
                     loanNumber = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Bussiness Name:");
+                    Console.WriteLine("Business Name:");
                     businessName = Console.ReadLine();
 
                     Console.WriteLine("Customer Name:");
@@ -87,8 +87,6 @@ namespace Loan_App
                             term = "Short Term";
                             break;
                     }
-
-                    // Calculation Method should be added here
                     
                     loans[i] = new BusinessLoan(businessName, custFirstname, custLastname, term, loanNumber, loanAmount, primeInterestRate);
                 }
@@ -133,6 +131,7 @@ namespace Loan_App
                             break;
                     }
 
+
                     loans[i] = new PersonalLoan(custFirstname, custLastname, term, loanNumber,  loanAmount, primeInterestRate);
                 }
    
@@ -145,6 +144,7 @@ namespace Loan_App
             {
                 if (loan != null)
                 {
+                    loan.CalculateLoan();
                     Console.WriteLine("\n" + loan.ToString());
                 }
             }
