@@ -9,10 +9,11 @@ namespace Loan_App
     internal class PersonalLoan : Loan
     {
         private double personalInterestrate, totalAmount;
-        private int termPeriod;
+        private int termPeriod, termChoice;
 
-        public PersonalLoan(string custFirstname, string custLastname, string term, int loanNumber, double loanAmount, double interestRate) : base(custFirstname, custLastname, term, loanNumber, loanAmount, interestRate)
+        public PersonalLoan(string custFirstname, string custLastname, string term,  int loanNumber, int termChoice, double loanAmount, double interestRate) : base(custFirstname, custLastname, term, termChoice, loanNumber, loanAmount, interestRate)
         {
+            this.termPeriod = termChoice;
             this.PersonalInterestrate = InterestRate + 2; // instructions : "PersonalLoan constructor sets the interest rate to 2% more than the current prime interest rate. "
         }
 

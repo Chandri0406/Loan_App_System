@@ -1,34 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Loan_App
 {
     internal class CreateLoans
-    {   /* STUDENTS
-         * Chandri Breytenbach 577398
-         * Frank Peter Smal 577298
-         * Ashley Vetter 577605
-         * Kelo Letsoalo 577613
-         */
+    {
+        public delegate void TermChosenEventHandler(int termPeriod);
+
+        public static event TermChosenEventHandler TermChosenEvent;
+
         static void Main(string[] args)
         {
-            /*IMPORTANT LIST
-             Loan Amount needs to be calculated
-             Loan Amount limit must be set
-             Bussiness class does not need cust name or cust lastname, but needs bussiness name
-             User manual needs to be created 
-             Comments need to be added
-             
-                  
-            Simple Interest (SI) = Principal (P) * Rate (R) * Time (T) / 100
-                                   Loan Amount   * B/P Rate * int termPeriod / 100
-            */
+            //An application that creates an array of five Loans. Prompt the user for the current 
+            //prime interest rate.Then, in a loop, prompt the user for a loan type and all relevant information for
+            //that loan. Store the created Loan objects in the array.When data entry is complete, display all the
+            //loans.
+
+            /* STUDENTS
+             * Chandri Breytenbach 577398
+             * Frank Peter Smal 577298
+             * Ashley Vetter 577605
+             * Kelo Letsoalo 577613
+             */
 
             string custFirstname, custLastname, term, businessName;
-            int loanNumber, termChoice, termPeriod;;
+            int loanNumber, termChoice, termPeriod;
             double loanAmount, primeInterestRate;
             Loan[] loans = new Loan[5];
 
@@ -59,6 +60,11 @@ namespace Loan_App
                     Console.WriteLine("Loan Amount:");
                     loanAmount = double.Parse(Console.ReadLine());
 
+                    if (loanAmount >= 100000)
+                    {
+                        loanAmount = Loan.LoanAmountExceeded(loanAmount);
+                    }
+
                     Console.WriteLine("Term:");
                     Console.WriteLine("1. Short Term");
                     Console.WriteLine("2. Medium Term");
@@ -87,8 +93,10 @@ namespace Loan_App
                             term = "Short Term";
                             break;
                     }
-                    
-                    loans[i] = new BusinessLoan(businessName, custFirstname, custLastname, term, loanNumber, loanAmount, primeInterestRate);
+
+                    TermChosenEvent?.Invoke(termPeriod);
+
+                    loans[i] = new BusinessLoan(businessName, custFirstname, term, custLastname, termChoice, loanNumber, loanAmount, primeInterestRate);
                 }
                 else // Personal Loan
                 {
@@ -103,6 +111,11 @@ namespace Loan_App
 
                     Console.WriteLine("Loan Amount:");
                     loanAmount = double.Parse(Console.ReadLine());
+
+                    if (loanAmount >= 100000)
+                    {
+                        loanAmount = Loan.LoanAmountExceeded(loanAmount);
+                    }
 
                     Console.WriteLine("Term:");
                     Console.WriteLine("1. Short Term");
@@ -131,8 +144,9 @@ namespace Loan_App
                             break;
                     }
 
+                    TermChosenEvent?.Invoke(termPeriod);
 
-                    loans[i] = new PersonalLoan(custFirstname, custLastname, term, loanNumber,  loanAmount, primeInterestRate);
+                    loans[i] = new PersonalLoan(custFirstname, custLastname, term, termChoice, loanNumber,  loanAmount, primeInterestRate);
                 }
    
             }
@@ -149,7 +163,13 @@ namespace Loan_App
                 }
             }
 
+            Console.WriteLine("Press any key to exit...");
             Console.ReadLine();
         }
+
+        
+
     }
+
+
 }

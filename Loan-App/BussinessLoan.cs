@@ -17,13 +17,14 @@ namespace Loan_App
         if they are a business then all it would need to do is add 1 to the banks interest rate
          */
 
-        public BusinessLoan(string businessName, string custFirstname, string custLastname, string term, int loanNumber,  double loanAmount, double interestRate) : base(custFirstname, custLastname, term, loanNumber,  loanAmount , interestRate)
+        public BusinessLoan(string businessName, string custFirstname, string custLastname, string term, int termChoice, int loanNumber,  double loanAmount, double interestRate) : base(custFirstname, custLastname, term, termChoice, loanNumber,  loanAmount , interestRate)
         {
             this.BusinessInterestrate = InterestRate + 1; // BusinessLoan constructor sets the interest rate to 1% more than the current prime interest rate.
             this.BusinessName = businessName;
+            this.termPeriod = termChoice;
         }
 
-        public int termPeroid { get => termPeriod; set => termPeriod = value; }
+        public int TermPeriod { get => termPeriod; set => termPeriod = value; }
         public double BusinessInterestrate { get => businessInterestrate; set => businessInterestrate = value; }
         public string BusinessName { get => businessName; set => businessName = value; }
 
@@ -37,5 +38,6 @@ namespace Loan_App
         {
             return $"Business Name: {businessName} \nCustomer name: {CustFirstname} \nCustomer surname: {CustLastname} \nLoan number: {LoanNumber} \nLoan amount: R {LoanAmount} \nInterest rate: {businessInterestrate}% \nLoan term: {Term} \nTotal amount owed at due date: R {totalAmount}";
         }
+
     }
 }
