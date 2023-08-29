@@ -46,12 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussinessLoan.cs" />
-    <Compile Include="Forms.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms.Designer.cs">
-      <DependentUpon>Forms.cs</DependentUpon>
-    </Compile>
     <Compile Include="ILoanConstants.cs" />
     <Compile Include="Loan.cs" />
     <Compile Include="PersonalLoan.cs" />
@@ -60,11 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Forms.resx">
-      <DependentUpon>Forms.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
