@@ -8,8 +8,8 @@ namespace Loan_App
 {
     internal class BussinessLoan : Loan
     {   
-        private double bussinessInterestrate ;
-        private string bussinessName;
+        private double businessInterestrate ;
+        private string businessName;
         /*
         how this would work 
         basically the program would starrt by asking if the person is a business or an individual
@@ -24,14 +24,14 @@ namespace Loan_App
 
         public BussinessLoan(string custFirstname, string custLastname, string term, int loanNumber,  double loanAmount, double interestRate, double termPeriod) : base(custFirstname, custLastname, term, loanNumber, loanAmount, interestRate, termPeriod)
         {
-            this.BussinessInterestrate = InterestRate + 1; // instructions : "PersonalLoan constructor sets the interest rate to 2% more than the current prime interest rate. "
+            this.BusinessInterestrate = InterestRate + 1; // instructions : "PersonalLoan constructor sets the interest rate to 2% more than the current prime interest rate. "
 
         }
 
         //Add Calculation override method based on bussiness interrest rate
 
-        public double BussinessInterestrate { get => bussinessInterestrate; set => bussinessInterestrate = value; }
-        public string BussinessName { get => bussinessName; set => bussinessName = value; }
+        public double BusinessInterestrate { get => businessInterestrate; set => businessInterestrate = value; }
+        public string BusinessName { get => businessName; set => businessName = value; }
 
         /*public void bLoan() // call this method in the eveht of a business loan
         {
@@ -40,12 +40,12 @@ namespace Loan_App
 
         public override double CalculateLoan()
         {
-            return LoanAmount * ((1 + bussinessInterestrate * TermPeriod) / 100);
+            return LoanAmount * (1 + (businessInterestrate / 100) * TermPeriod);
         }
 
         public override string ToString()
         {
-            return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: {bussinessInterestrate}% \nLoan term: {Term} \nTotal amount owed at due date: R{CalculateLoan()}";
+            return $"A customer name: \n{CustFirstname} {CustLastname} \nLoan number: {LoanNumber} \nloan amount of: R{LoanAmount} \nInterest rate of: {businessInterestrate}% \nLoan term: {Term} \nTotal amount owed at due date: R{CalculateLoan()}";
         }
     }
 }
