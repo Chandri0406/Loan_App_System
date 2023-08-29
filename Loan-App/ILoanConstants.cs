@@ -10,9 +10,8 @@ namespace Loan_App
     {
         // Constant values for Loan Terms, Company Name and Max Loan Amount
         string companyName { get; set; }
-        int shortTermLoan { get; set; }
+        int shortTermLoan { get; set ; }
         int mediumTermLoan { get; set; }
         int longTermLoan { get; set; }
-
     }
 }

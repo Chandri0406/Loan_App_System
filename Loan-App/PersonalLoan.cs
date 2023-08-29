@@ -9,27 +9,24 @@ namespace Loan_App
     internal class PersonalLoan : Loan
     {
         private double personalInterestrate, totalAmount;
-        private int termPeriod, termChoice;
 
-        public PersonalLoan(string custFirstname, string custLastname, string term,  int loanNumber, int termChoice, double loanAmount, double interestRate) : base(custFirstname, custLastname, term, termChoice, loanNumber, loanAmount, interestRate)
+        public PersonalLoan(string custFirstname, string custLastname, string term, int termPeriod, int loanNumber, double loanAmount, double interestRate) :
+            base(custFirstname, custLastname, term, termPeriod, loanNumber, loanAmount, interestRate)
         {
-            this.termPeriod = termChoice;
-            this.PersonalInterestrate = InterestRate + 2; // instructions : "PersonalLoan constructor sets the interest rate to 2% more than the current prime interest rate. "
+            this.PersonalInterestrate = InterestRate + 2; // instructions : "PersonalLoan constructor sets the interest rate to 2% more than the current prime interest rate."
         }
 
-        public int termPeroid { get => termPeriod; set => termPeriod = value; }
         public double PersonalInterestrate { get => personalInterestrate; set => personalInterestrate = value; }
 
         public override double CalculateLoan()
         {
-            totalAmount = LoanAmount * (1 + (personalInterestrate / 100) * termPeriod);
+            totalAmount = LoanAmount * (1 + (personalInterestrate / 100) * TermPeriod);
             return totalAmount;
         }
 
         public override string ToString()
         {
-            return $"Customer name: {CustFirstname} \nCustomer surname: {CustLastname} \nLoan number: {LoanNumber} \nLoan amount: R {LoanAmount} \nInterest rate: {personalInterestrate}% \nLoan term: {Term} \nTotal amount owed at due date: R {totalAmount}";
+            return $"Customer name: {CustFirstname} \nCustomer surname: {CustLastname} \nLoan number: {LoanNumber} \nLoan amount: R {LoanAmount} \nInterest rate: {personalInterestrate}% \nLoan term: {Term} of {TermPeriod} year(s) \nTotal amount owed at due date: R {totalAmount}";
         }
     }
-
 }

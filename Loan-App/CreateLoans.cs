@@ -9,24 +9,18 @@ using System.Windows.Forms;
 namespace Loan_App
 {
     internal class CreateLoans
-    {
-        public delegate void TermChosenEventHandler(int termPeriod);
-
-        public static event TermChosenEventHandler TermChosenEvent;
-
+    {    /* STUDENTS
+          * Chandri Breytenbach 577398
+          * Frank Peter Smal 577298
+          * Ashley Vetter 577605
+          * Kelo Letsoalo 577613
+          */
         static void Main(string[] args)
         {
             //An application that creates an array of five Loans. Prompt the user for the current 
             //prime interest rate.Then, in a loop, prompt the user for a loan type and all relevant information for
             //that loan. Store the created Loan objects in the array.When data entry is complete, display all the
             //loans.
-
-            /* STUDENTS
-             * Chandri Breytenbach 577398
-             * Frank Peter Smal 577298
-             * Ashley Vetter 577605
-             * Kelo Letsoalo 577613
-             */
 
             string custFirstname, custLastname, term, businessName;
             int loanNumber, termChoice, termPeriod;
@@ -38,7 +32,7 @@ namespace Loan_App
             primeInterestRate = double.Parse(Console.ReadLine());
 
             //A loop for 5 loans
-            for (int i=0; i<1; i++)
+            for (int i=0; i<5; i++)
             {
                 Console.WriteLine("Type of loan: \n 1. Business Loan \n 2. Personal Loan");
                 int choice = int.Parse(Console.ReadLine());
@@ -72,8 +66,6 @@ namespace Loan_App
 
                     termChoice = int.Parse(Console.ReadLine());
 
-                    // Create event like this switch and then call event after term choice
-
                     switch (termChoice)
                     {
                         case 1:
@@ -93,10 +85,7 @@ namespace Loan_App
                             term = "Short Term";
                             break;
                     }
-
-                    TermChosenEvent?.Invoke(termPeriod);
-
-                    loans[i] = new BusinessLoan(businessName, custFirstname, term, custLastname, termChoice, loanNumber, loanAmount, primeInterestRate);
+                    loans[i] = new BusinessLoan(businessName, custFirstname, custLastname, term, termPeriod, loanNumber, loanAmount, primeInterestRate);
                 }
                 else // Personal Loan
                 {
@@ -143,14 +132,9 @@ namespace Loan_App
                             term = "Short Term";
                             break;
                     }
-
-                    TermChosenEvent?.Invoke(termPeriod);
-
-                    loans[i] = new PersonalLoan(custFirstname, custLastname, term, termChoice, loanNumber,  loanAmount, primeInterestRate);
+                    loans[i] = new PersonalLoan(custFirstname, custLastname, term, termPeriod, loanNumber,  loanAmount, primeInterestRate);
                 }
-   
             }
-
             Console.Clear();
 
             Console.WriteLine("\nLoans created:");
@@ -166,10 +150,5 @@ namespace Loan_App
             Console.WriteLine("Press any key to exit...");
             Console.ReadLine();
         }
-
-        
-
     }
-
-
 }
