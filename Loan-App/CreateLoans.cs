@@ -25,15 +25,16 @@ namespace Loan_App
             string custFirstname, custLastname, term, businessName;
             int loanNumber, termChoice, termPeriod;
             double loanAmount, primeInterestRate;
-            Loan[] loans = new Loan[5];
+            Loan[] loans = new Loan[6];
 
             //A prompt for the prime interest rate
             Console.WriteLine("Enter the prime interest rate");
             primeInterestRate = double.Parse(Console.ReadLine());
 
             //A loop for 5 loans
-            for (int i=0; i<5; i++)
+            for (int i=1; i<6; i++)
             {
+                Console.WriteLine($"Loan {i} of 5");
                 Console.WriteLine("Type of loan: \n 1. Business Loan \n 2. Personal Loan");
                 int choice = int.Parse(Console.ReadLine());
 
@@ -149,7 +150,7 @@ namespace Loan_App
                 }
             }
 
-            Console.WriteLine("Press any key to exit...");
+            Console.WriteLine("\nPress any key to exit...");
             Console.ReadLine();
         }
     }
