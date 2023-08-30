@@ -13,7 +13,6 @@ namespace Loan_App
           * Chandri Breytenbach 577398
           * Frank Peter Smal 577298
           * Ashley Vetter 577605
-          * 
           * Kelo Letsoalo 577613
           */
         static void Main(string[] args)
@@ -33,8 +32,9 @@ namespace Loan_App
             primeInterestRate = double.Parse(Console.ReadLine());
 
             //A loop for 5 loans
-            for (int i=0; i<3; i++)
+            for (int i=1; i<6; i++)
             {
+                Console.WriteLine($"\nLoan {i} of 5\n");
                 Console.WriteLine("Type of loan: \n 1. Business Loan \n 2. Personal Loan");
                 int choice = int.Parse(Console.ReadLine());
 

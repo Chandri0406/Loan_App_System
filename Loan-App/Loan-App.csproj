@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BussinessLoan.cs" />
+    <Compile Include="BusinessLoan.cs" />
     <Compile Include="Counter.cs" />
     <Compile Include="ILoanConstants.cs" />
     <Compile Include="Loan.cs" />
