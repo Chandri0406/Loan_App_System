@@ -57,7 +57,11 @@ namespace Loan_App
 
         public static double LoanAmountExceeded(double loanAmount)
         {
-            while (loanAmount >= 100000)
+            if (loanAmount < 100000)
+            {
+                return loanAmount;
+            }
+            else if (loanAmount >= 100000)
             {
                 // Create instance of counter
                 Counter counter = new Counter();
@@ -66,7 +70,7 @@ namespace Loan_App
                 counter.DoSomething();
                 Console.WriteLine("Loan Amount:");
                 loanAmount = double.Parse(Console.ReadLine());
-                LoanAmountExceeded(loanAmount);
+                return LoanAmountExceeded(loanAmount);
             }
             return loanAmount;
         }
