@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussinessLoan.cs" />
+    <Compile Include="Counter.cs" />
     <Compile Include="ILoanConstants.cs" />
     <Compile Include="Loan.cs" />
     <Compile Include="PersonalLoan.cs" />
